@@ -323,11 +323,18 @@ body[data-theme="dark"] .home-logo {
 
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* ← 縦中央 */
-  align-items: center;        /* ← 横中央 */
+  justify-content: center;
+  align-items: center;
 
   text-align: center;
   padding: 20px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .swipe-buttons {
@@ -337,6 +344,11 @@ body[data-theme="dark"] .home-logo {
   display: flex;
   gap: 10px;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.swipe-buttons button {
+  touch-action: manipulation;
 }
 
 .card-front h2 {
@@ -354,12 +366,6 @@ body[data-theme="dark"] .home-logo {
   font-size: 26px;
   color: var(--text-sub);
   display: none;
-}
-  z-index: 10;
-  margin-top: 20px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
 }
 
 /* ------------------------------

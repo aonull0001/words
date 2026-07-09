@@ -110,21 +110,42 @@ function renderQuestion() {
 /* ---------------------------------------------------------
    回答判定
 --------------------------------------------------------- */
+function normalizeAnswer(value) {
+  return value.trim().replace(/[\s　]+/g, "").toLowerCase();
+}
+
+function getBaseFormFromJapanese(text) {
+  if (!text) return "";
+  const cleaned = text.replace(/[\s　]+/g, "");
+  const parts = cleaned.split("の");
+  if (parts.length > 1) {
+    const candidate = parts[0].trim();
+    if (candidate) return candidate;
+  }
+  return "";
+}
+
 function isCorrectAnswer(userAnswer, q) {
-  const normalized = userAnswer.trim().toLowerCase();
+  const normalizedUser = normalizeAnswer(userAnswer);
 
-  // Unit9 / Unit1 No.8 は原形のみ判定
-  const needBaseForm =
-    q.unit === 9 ||
-    (q.unit === 1 && q.id === 8);
-
-  const correctAnswer = mode === "en-ja" ? q.japanese : q.english;
-
-  if (needBaseForm && mode === "ja-en") {
-    return normalized === correctAnswer.trim().toLowerCase();
+  if (mode === "ja-en") {
+    return normalizedUser === normalizeAnswer(q.english);
   }
 
-  return normalized === correctAnswer.trim().toLowerCase();
+  const correctAnswer = normalizeAnswer(q.japanese);
+  if (normalizedUser === correctAnswer) {
+    return true;
+  }
+
+  const needsBaseForm = /過去分詞|過去形/.test(q.japanese);
+  if (needsBaseForm) {
+    const baseForm = getBaseFormFromJapanese(q.japanese);
+    if (baseForm) {
+      return normalizedUser === normalizeAnswer(baseForm);
+    }
+  }
+
+  return false;
 }
 
 function checkAnswer() {
