@@ -110,13 +110,30 @@ function renderQuestion() {
 /* ---------------------------------------------------------
    回答判定
 --------------------------------------------------------- */
+function isCorrectAnswer(userAnswer, q) {
+  const normalized = userAnswer.trim().toLowerCase();
+
+  // Unit9 / Unit1 No.8 は原形のみ判定
+  const needBaseForm =
+    q.unit === 9 ||
+    (q.unit === 1 && q.id === 8);
+
+  const correctAnswer = mode === "en-ja" ? q.japanese : q.english;
+
+  if (needBaseForm && mode === "ja-en") {
+    return normalized === correctAnswer.trim().toLowerCase();
+  }
+
+  return normalized === correctAnswer.trim().toLowerCase();
+}
+
 function checkAnswer() {
   const q = questions[index];
   const userAnswer = answerInput.value.trim();
 
-  let correctAnswer = mode === "en-ja" ? q.japanese : q.english;
+  const correctAnswer = mode === "en-ja" ? q.japanese : q.english;
 
-  if (userAnswer === correctAnswer) {
+  if (isCorrectAnswer(userAnswer, q)) {
     feedbackEl.textContent = "正解！";
     feedbackEl.style.color = "var(--main)";
     correctCount++;

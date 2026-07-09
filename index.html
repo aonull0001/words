@@ -5,12 +5,13 @@
   <title>English Notebook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- メインカラーなどはCSSで管理 -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
   <!-- 単語データと共通ロジック -->
-  <script src="assets/js/words.js" defer></script>
-  <script src="assets/js/app.js" defer></script>
+  <script src="words.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body data-theme="light">
+  <a href="index.html" class="home-logo">Aonull_</a>
   <!-- 全体ラッパー -->
   <div class="app-shell">
     <!-- ヘッダー -->
@@ -28,7 +29,7 @@
     </header>
 
     <!-- 検索バー（英語・日本語） -->
-    <section class="search-section card">
+    <section class="search-section search-box">
       <h2 class="section-title">単語検索</h2>
       <div class="search-inputs">
         <div class="search-field">
@@ -153,3 +154,4 @@
   </div>
 </body>
 </html>
+

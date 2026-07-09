@@ -6,21 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
 
   <!-- JS -->
-  <script src="assets/js/words.js" defer></script>
-  <script src="assets/js/app.js" defer></script>
-  <script src="assets/js/unit.js" defer></script>
+  <script src="words.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="unit.js" defer></script>
 </head>
 
 <body data-theme="light">
+  <a href="index.html" class="home-logo">Aonull_</a>
   <div class="app-shell">
 
     <!-- ヘッダー -->
     <header class="app-header">
       <div class="header-left">
-        <h1 class="app-title">Unit 学習</h1>
+        <h1 class="app-title">Unit学習</h1>
         <p class="app-subtitle">英単語を順番に学習できます。</p>
       </div>
       <div class="header-right">
@@ -33,34 +34,22 @@
     <!-- メイン -->
     <main class="app-main">
 
-      <!-- 単語カード -->
-      <section class="card" id="wordCard">
-        <h2 class="card-title" id="wordNumber">No.1</h2>
+      <section class="swipe-container">
+        <div id="card" class="swipe-card">
+          <div class="card-front">
+            <h2 id="wordEnglish">nation</h2>
+            <p id="wordNumber">No.1</p>
+          </div>
 
-        <div class="word-content">
-          <p class="word-english" id="wordEnglish">nation</p>
-
-          <button id="showMeaningBtn" class="primary-button" style="margin-top: 10px;">
-            意味を表示
-          </button>
-
-          <p class="word-japanese" id="wordJapanese" style="display:none;">
+          <div class="card-back" id="wordJapanese">
             国家
-          </p>
-
-          <button id="pronounceBtn" class="secondary-button" style="margin-top: 10px;">
-            発音する
-          </button>
-
-          <button id="favoriteBtn" class="secondary-button" style="margin-top: 10px;">
-            苦手に追加
-          </button>
+          </div>
         </div>
 
-        <!-- ナビゲーション -->
-        <div class="unit-nav" style="margin-top: 20px; display:flex; gap:10px;">
-          <button id="prevBtn" class="primary-button">前へ</button>
-          <button id="nextBtn" class="primary-button">次へ</button>
+        <div class="swipe-buttons">
+          <button id="showMeaningBtn" class="primary-button">意味を見る</button>
+          <button id="pronounceBtn" class="secondary-button">発音</button>
+          <button id="favoriteBtn" class="secondary-button">苦手に追加</button>
         </div>
       </section>
 
@@ -77,8 +66,9 @@
 
   <!-- キーボードヒント -->
   <div class="keyboard-hint">
-    ← → で単語移動、Enter / Space でボタン操作。
+    ← → で単語移動、Enter / Space でボタン操作
   </div>
 
 </body>
 </html>
+

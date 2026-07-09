@@ -6,15 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
 
   <!-- JS -->
-  <script src="assets/js/words.js" defer></script>
-  <script src="assets/js/app.js" defer></script>
-  <script src="assets/js/test.js" defer></script>
+  <script src="words.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="test.js" defer></script>
 </head>
 
 <body data-theme="light">
+  <a href="index.html" class="home-logo">Aonull_</a>
   <div class="app-shell">
 
     <!-- ヘッダー -->
@@ -37,22 +38,22 @@
       <section class="card">
         <h2 class="card-title">テスト設定</h2>
 
-        <!-- モード選択 -->
+        <!-- 出題形式 -->
         <div class="test-section" style="margin-top: 16px;">
           <h3>出題形式</h3>
           <div class="test-options">
-            <label><input type="radio" name="mode" value="en-ja" checked> 英 → 日</label><br>
-            <label><input type="radio" name="mode" value="ja-en"> 日 → 英</label>
+            <label><input type="radio" name="mode" value="en-ja" checked> 英→日</label><br>
+            <label><input type="radio" name="mode" value="ja-en"> 日→英</label>
           </div>
         </div>
 
-        <!-- 問題数選択 -->
+        <!-- 問題数 -->
         <div class="test-section" style="margin-top: 16px;">
           <h3>問題数</h3>
           <div class="test-options">
             <label><input type="radio" name="count" value="10" checked> 10問</label><br>
             <label><input type="radio" name="count" value="20"> 20問</label><br>
-            <label><input type="radio" name="count" value="all"> 全問題</label><br>
+            <label><input type="radio" name="count" value="all"> 全問</label><br>
             <label><input type="radio" name="count" value="unit"> Unit指定</label>
           </div>
         </div>
@@ -73,7 +74,7 @@
           </select>
         </div>
 
-        <!-- スタートボタン -->
+        <!-- スタート -->
         <div style="margin-top: 24px;">
           <button id="startTestBtn" class="primary-button" style="width:100%;">
             テストを開始
@@ -88,7 +89,7 @@
         <p id="testQuestion" style="font-size:20px; margin-top:10px;"></p>
 
         <input id="testAnswer" type="text"
-               placeholder="答えを入力"
+               placeholder="答えを入力してください"
                style="width:100%; padding:12px; margin-top:12px; border-radius:var(--radius); border:1px solid var(--border);">
 
         <button id="submitAnswerBtn" class="secondary-button" style="margin-top:16px;">
@@ -126,8 +127,9 @@
 
   <!-- キーボードヒント -->
   <div class="keyboard-hint">
-    Enter で回答、← → で次の問題へ（test.jsで実装）
+    Enter で回答、→ で次の問題へ
   </div>
 
 </body>
 </html>
+

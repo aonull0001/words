@@ -163,6 +163,13 @@ body {
   margin-top: 20px;
 }
 
+.search-box {
+  position: relative;
+  top: auto;
+  z-index: 1;
+  margin-top: 70px;
+}
+
 .search-inputs {
   display: flex;
   gap: 16px;
@@ -275,6 +282,84 @@ body {
   margin-top: 20px;
   font-size: 12px;
   color: var(--text-sub);
+}
+
+/* ===== 左上ホームロゴ ===== */
+.home-logo {
+  position: fixed;
+  top: 14px;
+  left: 18px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  z-index: 9999;
+
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.home-logo:hover {
+  opacity: 0.6;
+}
+
+body[data-theme="dark"] .home-logo {
+  color: #fff;
+}
+
+/* ===== カード中央揃え（偏り解消） ===== */
+
+.swipe-card {
+  width: 100%;
+  height: 260px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* ← 縦中央 */
+  align-items: center;        /* ← 横中央 */
+
+  text-align: center;
+  padding: 20px;
+}
+
+.swipe-buttons {
+  position: relative;
+  z-index: 10;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.card-front h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.card-front p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: var(--text-sub);
+}
+
+.card-back {
+  font-size: 26px;
+  color: var(--text-sub);
+  display: none;
+}
+  z-index: 10;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
 /* ------------------------------
