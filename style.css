@@ -1,35 +1,19 @@
 /* =========================================================
    English Notebook - style.css
-   シンプル・勉強しやすいデザイン
-   PC/スマホ完全対応 / ダークモード対応
+   シンプル・質素なデザイン
+   PC/スマホ対応
    ========================================================= */
 
-/* ------------------------------
-   CSS変数（ライト / ダーク共通）
------------------------------- */
 :root {
   --main: #2563EB;
   --accent: #F59E0B;
-  --radius: 16px;
-  --transition: 0.25s ease;
-
-  /* Light mode */
-  --bg: #F8FAFC;
-  --card: #FFFFFF;
-  --text: #1E293B;
-  --text-sub: #475569;
-  --border: #E2E8F0;
-}
-
-/* ------------------------------
-   ダークモード
------------------------------- */
-[data-theme="dark"] {
-  --bg: #0F172A;
-  --card: #1E293B;
-  --text: #F1F5F9;
-  --text-sub: #CBD5E1;
-  --border: #334155;
+  --radius: 10px;
+  --transition: 0.2s ease;
+  --bg: #f7f7f7;
+  --card: #ffffff;
+  --text: #222222;
+  --text-sub: #666666;
+  --border: #e2e2e2;
 }
 
 /* ------------------------------
@@ -41,7 +25,6 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: "Inter", "Noto Sans JP", sans-serif;
-  transition: background var(--transition), color var(--transition);
 }
 
 .app-shell {
@@ -57,18 +40,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
+  padding: 8px 0 12px;
 }
 
 .app-title {
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
 }
 
 .app-subtitle {
-  margin: 4px 0 0;
-  font-size: 14px;
+  margin: 2px 0 0;
+  font-size: 13px;
   color: var(--text-sub);
 }
 
@@ -97,10 +80,8 @@ body {
 .card {
   background: var(--card);
   border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 16px 18px;
   border: 1px solid var(--border);
-  transition: background var(--transition), box-shadow var(--transition);
 }
 
 .card-header {
@@ -110,7 +91,7 @@ body {
 .card-title {
   margin: 0;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .card-text {
@@ -124,26 +105,21 @@ body {
 .primary-button,
 .secondary-button {
   display: inline-block;
-  padding: 12px 18px;
+  padding: 11px 16px;
   border-radius: var(--radius);
   text-decoration: none;
-  font-weight: 600;
-  transition: opacity var(--transition);
-}
-
-.primary-button {
-  background: var(--main);
-  color: #fff;
-}
-
-.secondary-button {
-  background: var(--accent);
-  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border: 1.5px solid #111111;
+  background: var(--card);
+  color: var(--text);
+  transition: background var(--transition), color var(--transition), opacity var(--transition);
 }
 
 .primary-button:hover,
 .secondary-button:hover {
-  opacity: 0.85;
+  background: #f3f3f3;
+  opacity: 0.95;
 }
 
 /* ------------------------------
@@ -212,16 +188,18 @@ body {
 .unit-list a {
   display: inline-block;
   padding: 10px 14px;
-  background: var(--main);
-  color: #fff;
+  background: var(--card);
+  color: var(--text);
+  border: 1.5px solid #111111;
   border-radius: var(--radius);
   text-decoration: none;
   font-size: 14px;
-  transition: opacity var(--transition);
+  font-weight: 700;
+  transition: background var(--transition), color var(--transition);
 }
 
 .unit-list a:hover {
-  opacity: 0.85;
+  background: #f3f3f3;
 }
 
 /* ------------------------------
@@ -305,18 +283,15 @@ body {
   opacity: 0.6;
 }
 
-body[data-theme="dark"] .home-logo {
-  color: #fff;
-}
 
 /* ===== カード中央揃え（偏り解消） ===== */
 
 .swipe-card {
   width: 100%;
   height: 260px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
   z-index: 1;
