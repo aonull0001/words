@@ -55,24 +55,6 @@ body {
   color: var(--text-sub);
 }
 
-.icon-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: var(--radius);
-  transition: background var(--transition);
-}
-
-.icon-button:hover {
-  background: var(--border);
-}
-
-/* 仮アイコン（後でSVGに差し替え可能） */
-.icon-moon::before {
-  content: "🌙";
-  font-size: 20px;
-}
 
 /* ------------------------------
    カードUI（Material風）

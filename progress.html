@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>学習状況 | English Notebook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JS -->
+  <script src="words.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="progress.js" defer></script>
+</head>
+
+<body>
+  <a href="index.html" class="home-logo">Aonull_</a>
+  <div class="app-shell">
+
+    <!-- ヘッダー -->
+    <header class="app-header">
+      <div class="header-left">
+        <h1 class="app-title">学習状況</h1>
+        <p class="app-subtitle">あなたの学習データをまとめて確認できます。</p>
+      </div>
+    </header>
+
+    <!-- メイン -->
+    <main class="app-main">
+
+      <!-- 学習状況カード -->
+      <section class="card">
+        <h2 class="card-title">統計情報</h2>
+
+        <ul class="stats-list" style="margin-top:16px;">
+          <li><span>総学習数</span><strong id="statTotalLearned">0</strong></li>
+          <li><span>Unit達成率</span><strong id="statUnitRate">0%</strong></li>
+          <li><span>正答率</span><strong id="statAccuracy">0%</strong></li>
+          <li><span>苦手単語数</span><strong id="statFavorites">0</strong></li>
+          <li><span>今日の学習数</span><strong id="statDaily">0</strong></li>
+        </ul>
+
+        <!-- グラフ風 -->
+        <div style="margin-top:20px;">
+          <h3>Unit達成率</h3>
+          <div class="progress-bar-bg" style="
+            width:100%;
+            height:20px;
+            background:var(--border);
+            border-radius:var(--radius);
+            margin-top:8px;
+          ">
+            <div id="unitProgressBar" style="
+              height:100%;
+              width:0%;
+              background:var(--main);
+              border-radius:var(--radius);
+              transition:width 0.4s ease;
+            "></div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;">
+          <h3>正答率</h3>
+          <div class="progress-bar-bg" style="
+            width:100%;
+            height:20px;
+            background:var(--border);
+            border-radius:var(--radius);
+            margin-top:8px;
+          ">
+            <div id="accuracyProgressBar" style="
+              height:100%;
+              width:0%;
+              background:var(--accent);
+              border-radius:var(--radius);
+              transition:width 0.4s ease;
+            "></div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="app-footer">
+      <p class="footer-text">
+        English Notebook &copy; <span id="footerYear"></span>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- キーボードヒント -->
+  <div class="keyboard-hint">
+    このページではキーボード操作はありません。
+  </div>
+
+</body>
+</html>
+

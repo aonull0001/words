@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Unit | English Notebook</title>
+  <title>苦手単語 | English Notebook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- CSS -->
@@ -11,7 +11,7 @@
   <!-- JS -->
   <script src="words.js" defer></script>
   <script src="app.js" defer></script>
-  <script src="unit.js" defer></script>
+  <script src="favorites.js" defer></script>
 </head>
 
 <body>
@@ -21,30 +21,26 @@
     <!-- ヘッダー -->
     <header class="app-header">
       <div class="header-left">
-        <h1 class="app-title">Unit学習</h1>
-        <p class="app-subtitle">英単語を順番に学習できます。</p>
+        <h1 class="app-title">苦手単語</h1>
+        <p class="app-subtitle">登録した苦手単語を一覧で確認できます。</p>
       </div>
     </header>
 
     <!-- メイン -->
     <main class="app-main">
 
-      <section class="swipe-container">
-        <div id="card" class="swipe-card">
-          <div class="card-front">
-            <h2 id="wordEnglish">nation</h2>
-            <p id="wordNumber">No.1</p>
-          </div>
+      <!-- 苦手単語一覧 -->
+      <section class="card">
+        <h2 class="card-title">苦手単語一覧</h2>
 
-          <div class="card-back" id="wordJapanese">
-            国家
-          </div>
+        <div id="favoritesList" style="margin-top:16px;">
+          <!-- JSで一覧を生成 -->
         </div>
 
-        <div class="swipe-buttons">
-          <button id="showMeaningBtn" class="primary-button">意味を見る</button>
-          <button id="pronounceBtn" class="secondary-button">発音</button>
-          <button id="favoriteBtn" class="secondary-button">苦手に追加</button>
+        <div style="margin-top:24px;">
+          <a href="test.html" class="primary-button" style="width:100%;">
+            苦手単語だけでテストする
+          </a>
         </div>
       </section>
 
@@ -61,7 +57,7 @@
 
   <!-- キーボードヒント -->
   <div class="keyboard-hint">
-    ← → で単語移動、Enter / Space でボタン操作
+    このページではキーボード操作はありません。
   </div>
 
 </body>
