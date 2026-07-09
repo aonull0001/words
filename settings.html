@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>設定 | English Notebook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- JS -->
+  <script src="assets/js/words.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/settings.js" defer></script>
+</head>
+
+<body data-theme="light">
+  <div class="app-shell">
+
+    <!-- ヘッダー -->
+    <header class="app-header">
+      <div class="header-left">
+        <h1 class="app-title">設定</h1>
+        <p class="app-subtitle">アプリの動作や保存データを管理できます。</p>
+      </div>
+      <div class="header-right">
+        <button id="themeToggle" class="icon-button" aria-label="テーマ切り替え">
+          <span class="icon-moon"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- メイン -->
+    <main class="app-main">
+
+      <!-- テーマ設定 -->
+      <section class="card">
+        <h2 class="card-title">テーマ設定</h2>
+
+        <div style="margin-top:16px;">
+          <button id="toggleThemeBtn" class="primary-button" style="width:100%;">
+            ダークモード切り替え
+          </button>
+        </div>
+      </section>
+
+      <!-- 保存データ管理 -->
+      <section class="card" style="margin-top:20px;">
+        <h2 class="card-title">保存データ管理</h2>
+
+        <div style="margin-top:16px;">
+          <button id="resetLearningBtn" class="secondary-button" style="width:100%; margin-top:10px;">
+            学習履歴をリセット
+          </button>
+
+          <button id="resetFavoritesBtn" class="secondary-button" style="width:100%; margin-top:10px;">
+            苦手単語をリセット
+          </button>
+
+          <button id="resetLastPageBtn" class="secondary-button" style="width:100%; margin-top:10px;">
+            最後に開いたページをリセット
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="app-footer">
+      <p class="footer-text">
+        English Notebook &copy; <span id="footerYear"></span>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- キーボードヒント -->
+  <div class="keyboard-hint">
+    このページではキーボード操作はありません。
+  </div>
+
+</body>
+</html>

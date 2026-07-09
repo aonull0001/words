@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>English Notebook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- メインカラーなどはCSSで管理 -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- 単語データと共通ロジック -->
+  <script src="assets/js/words.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body data-theme="light">
+  <!-- 全体ラッパー -->
+  <div class="app-shell">
+    <!-- ヘッダー -->
+    <header class="app-header">
+      <div class="header-left">
+        <h1 class="app-title">English Notebook</h1>
+        <p class="app-subtitle">シンプルに、英単語をコツコツ覚える。</p>
+      </div>
+      <div class="header-right">
+        <!-- ダークモード切り替え -->
+        <button id="themeToggle" class="icon-button" aria-label="テーマ切り替え">
+          <span class="icon-moon"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 検索バー（英語・日本語） -->
+    <section class="search-section card">
+      <h2 class="section-title">単語検索</h2>
+      <div class="search-inputs">
+        <div class="search-field">
+          <label for="searchEnglish">英語で検索</label>
+          <input id="searchEnglish" type="text" placeholder="nation, ability など">
+        </div>
+        <div class="search-field">
+          <label for="searchJapanese">日本語で検索</label>
+          <input id="searchJapanese" type="text" placeholder="国家, 能力 など">
+        </div>
+      </div>
+      <div id="searchResults" class="search-results" aria-live="polite"></div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main class="app-main">
+      <!-- ナビゲーションカード群 -->
+      <section class="grid-section">
+        <!-- Unit一覧 -->
+        <article class="card">
+          <header class="card-header">
+            <h2 class="card-title">Unit一覧</h2>
+          </header>
+          <div class="card-body">
+            <p class="card-text">Unit1〜Unit9の単語を順番に学習できます。</p>
+            <div class="unit-list" id="unitList">
+              <!-- JSでUnitボタンを生成 -->
+            </div>
+          </div>
+        </article>
+
+        <!-- ランダム学習 -->
+        <article class="card">
+          <header class="card-header">
+            <h2 class="card-title">ランダム学習</h2>
+          </header>
+          <div class="card-body">
+            <p class="card-text">全102語からランダムに出題します。</p>
+            <a href="random.html" class="primary-button">ランダム学習へ</a>
+          </div>
+        </article>
+
+        <!-- テスト -->
+        <article class="card">
+          <header class="card-header">
+            <h2 class="card-title">テスト</h2>
+          </header>
+          <div class="card-body">
+            <p class="card-text">英→日 / 日→英、問題数やUnitを選んでテストできます。</p>
+            <a href="test.html" class="primary-button">テストを開始</a>
+          </div>
+        </article>
+
+        <!-- 苦手単語 -->
+        <article class="card">
+          <header class="card-header">
+            <h2 class="card-title">苦手単語</h2>
+          </header>
+          <div class="card-body">
+            <p class="card-text">登録した苦手単語だけを集中して復習できます。</p>
+            <a href="favorites.html" class="primary-button">苦手単語一覧</a>
+          </div>
+        </article>
+
+        <!-- 学習状況 -->
+        <article class="card">
+          <header class="card-header">
+            <h2 class="card-title">学習状況</h2>
+          </header>
+          <div class="card-body">
+            <ul class="stats-list">
+              <li><span>総学習数</span><strong id="statTotalLearned">0</strong></li>
+              <li><span>Unit達成率</span><strong id="statUnitRate">0%</strong></li>
+              <li><span>正答率</span><strong id="statAccuracy">0%</strong></li>
+              <li><span>苦手数</span><strong id="statFavorites">0</strong></li>
+            </ul>
+            <a href="progress.html" class="secondary-button">詳細を見る</a>
+          </div>
+        </article>
+
+        <!-- 設定 -->
+        <article class="card">
+          <header class="card-header">
+            <h2 class="card-title">設定</h2>
+          </header>
+          <div class="card-body">
+            <p class="card-text">ダークモードや学習履歴のリセットなどを行えます。</p>
+            <a href="settings.html" class="secondary-button">設定を開く</a>
+          </div>
+        </article>
+
+        <!-- 今日の学習数 -->
+        <article class="card">
+          <header class="card-header">
+            <h2 class="card-title">今日の学習数</h2>
+          </header>
+          <div class="card-body">
+            <p class="card-text">今日学習した単語数の合計です。</p>
+            <div class="today-count">
+              <span class="today-label">今日の学習数</span>
+              <strong id="todayLearnedCount">0</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="app-footer">
+      <p class="footer-text">
+        English Notebook &copy; <span id="footerYear"></span>
+      </p>
+      <p class="footer-text-small">
+        最後に開いたページを記録して、次回起動時に復元します。
+      </p>
+    </footer>
+  </div>
+
+  <!-- キーボード操作用の説明（視覚的には控えめ） -->
+  <div class="keyboard-hint" aria-hidden="true">
+    ← → でページ移動、Enter / Space でボタン操作に対応予定。
+  </div>
+</body>
+</html>

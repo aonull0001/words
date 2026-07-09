@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>苦手単語 | English Notebook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- JS -->
+  <script src="assets/js/words.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/favorites.js" defer></script>
+</head>
+
+<body data-theme="light">
+  <div class="app-shell">
+
+    <!-- ヘッダー -->
+    <header class="app-header">
+      <div class="header-left">
+        <h1 class="app-title">苦手単語</h1>
+        <p class="app-subtitle">登録した苦手単語を一覧で確認できます。</p>
+      </div>
+      <div class="header-right">
+        <button id="themeToggle" class="icon-button" aria-label="テーマ切り替え">
+          <span class="icon-moon"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- メイン -->
+    <main class="app-main">
+
+      <!-- 苦手単語一覧 -->
+      <section class="card">
+        <h2 class="card-title">苦手単語一覧</h2>
+
+        <div id="favoritesList" style="margin-top:16px;">
+          <!-- JSで一覧を生成 -->
+        </div>
+
+        <div style="margin-top:24px;">
+          <a href="test.html" class="primary-button" style="width:100%;">
+            苦手単語だけでテストする
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="app-footer">
+      <p class="footer-text">
+        English Notebook &copy; <span id="footerYear"></span>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- キーボードヒント -->
+  <div class="keyboard-hint">
+    Enter で意味表示、→ で次の単語へ（favorites.jsで実装）
+  </div>
+
+</body>
+</html>

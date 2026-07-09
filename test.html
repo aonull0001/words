@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>テスト | English Notebook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- JS -->
+  <script src="assets/js/words.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/test.js" defer></script>
+</head>
+
+<body data-theme="light">
+  <div class="app-shell">
+
+    <!-- ヘッダー -->
+    <header class="app-header">
+      <div class="header-left">
+        <h1 class="app-title">テスト</h1>
+        <p class="app-subtitle">問題形式と問題数を選んでテストを開始できます。</p>
+      </div>
+      <div class="header-right">
+        <button id="themeToggle" class="icon-button" aria-label="テーマ切り替え">
+          <span class="icon-moon"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- メイン -->
+    <main class="app-main">
+
+      <!-- テスト設定カード -->
+      <section class="card">
+        <h2 class="card-title">テスト設定</h2>
+
+        <!-- モード選択 -->
+        <div class="test-section" style="margin-top: 16px;">
+          <h3>出題形式</h3>
+          <div class="test-options">
+            <label><input type="radio" name="mode" value="en-ja" checked> 英 → 日</label><br>
+            <label><input type="radio" name="mode" value="ja-en"> 日 → 英</label>
+          </div>
+        </div>
+
+        <!-- 問題数選択 -->
+        <div class="test-section" style="margin-top: 16px;">
+          <h3>問題数</h3>
+          <div class="test-options">
+            <label><input type="radio" name="count" value="10" checked> 10問</label><br>
+            <label><input type="radio" name="count" value="20"> 20問</label><br>
+            <label><input type="radio" name="count" value="all"> 全問題</label><br>
+            <label><input type="radio" name="count" value="unit"> Unit指定</label>
+          </div>
+        </div>
+
+        <!-- Unit選択 -->
+        <div class="test-section" id="unitSelectSection" style="margin-top: 16px; display:none;">
+          <h3>Unit選択</h3>
+          <select id="unitSelect" style="padding:10px; border-radius:var(--radius); border:1px solid var(--border);">
+            <option value="1">Unit 1</option>
+            <option value="2">Unit 2</option>
+            <option value="3">Unit 3</option>
+            <option value="4">Unit 4</option>
+            <option value="5">Unit 5</option>
+            <option value="6">Unit 6</option>
+            <option value="7">Unit 7</option>
+            <option value="8">Unit 8</option>
+            <option value="9">Unit 9</option>
+          </select>
+        </div>
+
+        <!-- スタートボタン -->
+        <div style="margin-top: 24px;">
+          <button id="startTestBtn" class="primary-button" style="width:100%;">
+            テストを開始
+          </button>
+        </div>
+      </section>
+
+      <!-- テスト問題表示 -->
+      <section class="card" id="testArea" style="margin-top:20px; display:none;">
+        <h2 class="card-title">問題</h2>
+
+        <p id="testQuestion" style="font-size:20px; margin-top:10px;"></p>
+
+        <input id="testAnswer" type="text"
+               placeholder="答えを入力"
+               style="width:100%; padding:12px; margin-top:12px; border-radius:var(--radius); border:1px solid var(--border);">
+
+        <button id="submitAnswerBtn" class="secondary-button" style="margin-top:16px;">
+          回答する
+        </button>
+
+        <p id="testFeedback" style="margin-top:12px; color:var(--text-sub);"></p>
+      </section>
+
+      <!-- 結果表示 -->
+      <section class="card" id="resultArea" style="margin-top:20px; display:none;">
+        <h2 class="card-title">結果</h2>
+
+        <p id="resultScore" style="font-size:22px; margin-top:10px;"></p>
+        <p id="resultRate" style="font-size:18px; margin-top:6px;"></p>
+
+        <h3 style="margin-top:16px;">間違えた問題</h3>
+        <ul id="wrongList" style="margin-top:10px;"></ul>
+
+        <button id="retryBtn" class="primary-button" style="margin-top:20px;">
+          もう一度テストする
+        </button>
+      </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="app-footer">
+      <p class="footer-text">
+        English Notebook &copy; <span id="footerYear"></span>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- キーボードヒント -->
+  <div class="keyboard-hint">
+    Enter で回答、← → で次の問題へ（test.jsで実装）
+  </div>
+
+</body>
+</html>

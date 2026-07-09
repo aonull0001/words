@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit | English Notebook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- JS -->
+  <script src="assets/js/words.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/unit.js" defer></script>
+</head>
+
+<body data-theme="light">
+  <div class="app-shell">
+
+    <!-- ヘッダー -->
+    <header class="app-header">
+      <div class="header-left">
+        <h1 class="app-title">Unit 学習</h1>
+        <p class="app-subtitle">英単語を順番に学習できます。</p>
+      </div>
+      <div class="header-right">
+        <button id="themeToggle" class="icon-button" aria-label="テーマ切り替え">
+          <span class="icon-moon"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- メイン -->
+    <main class="app-main">
+
+      <!-- 単語カード -->
+      <section class="card" id="wordCard">
+        <h2 class="card-title" id="wordNumber">No.1</h2>
+
+        <div class="word-content">
+          <p class="word-english" id="wordEnglish">nation</p>
+
+          <button id="showMeaningBtn" class="primary-button" style="margin-top: 10px;">
+            意味を表示
+          </button>
+
+          <p class="word-japanese" id="wordJapanese" style="display:none;">
+            国家
+          </p>
+
+          <button id="pronounceBtn" class="secondary-button" style="margin-top: 10px;">
+            発音する
+          </button>
+
+          <button id="favoriteBtn" class="secondary-button" style="margin-top: 10px;">
+            苦手に追加
+          </button>
+        </div>
+
+        <!-- ナビゲーション -->
+        <div class="unit-nav" style="margin-top: 20px; display:flex; gap:10px;">
+          <button id="prevBtn" class="primary-button">前へ</button>
+          <button id="nextBtn" class="primary-button">次へ</button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="app-footer">
+      <p class="footer-text">
+        English Notebook &copy; <span id="footerYear"></span>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- キーボードヒント -->
+  <div class="keyboard-hint">
+    ← → で単語移動、Enter / Space でボタン操作。
+  </div>
+
+</body>
+</html>
